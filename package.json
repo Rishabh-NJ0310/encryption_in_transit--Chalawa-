@@ -1,0 +1,39 @@
+{
+  "name": "chalawa",
+  "version": "0.0.1",
+  "description": "a package for applying encryption at transit state",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "example": "npx ts-node examples/dh-example.ts",
+    "test": "npx ts-node test/integration-test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rishabh-NJ0310/Chalawa.git"
+  },
+  "keywords": [
+    "encryption",
+    "decryption",
+    "crypto",
+    "cryptography",
+    "security",
+    "secure",
+    "transit",
+    "data security"
+  ],
+  "author": "nullpointer0310",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rishabh-NJ0310/Chalawa/issues"
+  },
+  "homepage": "https://github.com/Rishabh-NJ0310/Chalawa#readme",
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  }
+}
