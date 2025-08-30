@@ -17,8 +17,13 @@ export function dhEncrypt({ plainText, sharedSecret }: DHEncryptionInput): strin
     let encrypted = cipher.update(plainText, 'utf-8', 'base64');
     encrypted += cipher.final('base64');
     const authTag = cipher.getAuthTag();
-    
+    console.log("Encrypted:", encrypted);
+    console.log("IV:", Buffer.from(iv).toString('base64'));
+    console.log("Auth Tag:", authTag.toString('base64'));
+    const str = `${encrypted}+ ${Buffer.from(iv).toString('base64')}+ ${authTag.toString('base64')}`
+    console.log("Full Encrypted String:", str + " length of " + str.length);
     return encrypted + ":" + Buffer.from(iv).toString('base64') + ":" + authTag.toString('base64');
+    
 }
 
 /**
@@ -47,3 +52,12 @@ export function dhDecrypt({ encryptedText, sharedSecret }: DHDecryptionInput): a
     
     return JSON.parse(decrypted);
 }
+
+
+
+/*
+
+    CUSTOM PADDING MIDDLEWARE
+
+
+*/
