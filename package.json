@@ -8,11 +8,12 @@
   "scripts": {
     "build": "tsup",
     "example": "npx ts-node examples/dh-example.ts",
-    "test": "npx ts-node test/integration-test.ts"
+    "test": "npx ts-node test/integration-test.ts",
+    "ex":"npm run build && npm run example"  
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rishabh-NJ0310/Chalawa.git"
+    "url": "git+https://github.com/Rishabh-NJ0310/encryption_in_transit--Chalawa-.git"
   },
   "keywords": [
     "encryption",
@@ -27,9 +28,9 @@
   "author": "nullpointer0310",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Rishabh-NJ0310/Chalawa/issues"
+    "url": "https://github.com/Rishabh-NJ0310/encryption_in_transit--Chalawa-/issues"
   },
-  "homepage": "https://github.com/Rishabh-NJ0310/Chalawa#readme",
+  "homepage": "https://github.com/Rishabh-NJ0310/encryption_in_transit--Chalawa-#readme",
   "devDependencies": {
     "@types/node": "^24.3.0",
     "ts-node": "^10.9.2",
