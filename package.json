@@ -1,6 +1,6 @@
 {
   "name": "chalawa",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "a package for applying encryption at transit state",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
