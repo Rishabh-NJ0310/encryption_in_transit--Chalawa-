@@ -134,7 +134,9 @@ const encrypted = dhEncrypt({
 - **Parameters**: `encryptedText` (string), `password` (string)  
 - **Returns**: Decrypted and parsed data
 
-### Diffie-Hellman Functions
+### Diffie-Hellman Functions (Classic - Best for Flutter)
+
+> **Note**: Use these functions if you are communicating with the existing Flutter frontend package.
 
 #### `generateDHKeyPair(options?: DHKeyExchangeInput): DHKeyPair`
 - **Parameters**: `password` (optional string for enhanced security)
@@ -153,6 +155,30 @@ const encrypted = dhEncrypt({
 - **Returns**: Decrypted and parsed data
 
 #### `validatePublicKey(publicKey: string): boolean`
+- **Parameters**: `publicKey` (hex string)
+- **Returns**: True if public key format is valid
+
+### ECDH Functions (Web Crypto - Best for React/Next.js)
+
+> **Note**: Use these functions if you are communicating with `chalawa-web` in a React, Next.js, or other browser-based frontend. This uses Elliptic Curve Diffie-Hellman (P-256) which is natively supported by the Web Crypto API.
+
+#### `generateECDHKeyPair(options?: DHKeyExchangeInput): DHKeyPair`
+- **Parameters**: `password` (optional string for enhanced security)
+- **Returns**: Object with `privateKey` and `publicKey` as hex strings
+
+#### `computeECDHSharedSecret(options: DHSharedSecretInput): string`
+- **Parameters**: `privateKey` (string), `otherPublicKey` (string), `password` (optional)
+- **Returns**: Shared secret as hex string
+
+#### `ecdhEncrypt(options: DHEncryptionInput): string`
+- **Parameters**: `plainText` (string), `sharedSecret` (string)
+- **Returns**: Encrypted string (Alias for `dhEncrypt`)
+
+#### `ecdhDecrypt(options: DHDecryptionInput): any`
+- **Parameters**: `encryptedText` (string), `sharedSecret` (string)
+- **Returns**: Decrypted and parsed data (Alias for `dhDecrypt`)
+
+#### `validateECDHPublicKey(publicKey: string): boolean`
 - **Parameters**: `publicKey` (hex string)
 - **Returns**: True if public key format is valid
 
